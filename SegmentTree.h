@@ -22,7 +22,7 @@ void update(ll n,ll s,ll e,ll i,ll val){
     if(s>=i&&e<=i){
         tree[n]=val;
     }
-    ll l=n*2;,r=n*2+1,mid=(s+e)/2;
+    ll l=n*2,r=n*2+1,mid=(s+e)/2;
     update(l,s,mid,i,val);
     update(r,mid+1,e,i,val);
     tree[n]=tree[l]+tree[r];
