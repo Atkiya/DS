@@ -132,12 +132,14 @@ public:
         q.push(s);
         while(!q.empty()){
             int f=q.front();
-            cout<<f<<' ';
             q.pop();
+            if(vis[f]==0){
+                cout<<f<<' ';
+                vis[f]=1;
+            }
             for(int i=0;i<vertices;i++){
                 if(adjMatrix[f][i]==1&&vis[i]==0){
                     q.push(i);
-                    vis[i]=1;
                 }
             }
         }
